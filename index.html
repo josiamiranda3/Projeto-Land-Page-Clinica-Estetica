@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clínica BellaVitta - Arte, Ciência e Beleza</title>
+    <meta name="description" content="Experimente a fusão de arte e ciência na Clínica BellaVitta. Tratamentos estéticos de vanguarda em um ambiente de luxo. Sua jornada de transformação começa aqui.">
+    
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header >
+
+        <video autoplay muted loop playsinline class="background-video">
+        <source src="Clinica.mp4" type="video/mp4">
+        Seu navegador não suporta vídeos HTML5.
+    </video>
+
+    
+        <nav id="navbar">
+            <div class="logo">BellaVitta</div>
+            <ul>
+                <li><a href="#about">A Clínica</a></li>
+                <li><a href="#treatments">Tratamentos</a></li>
+                <li><a href="#testimonials">Depoimentos</a></li>
+                <li><a href="#contact" class="nav-button">Agendar Avaliação</a></li>
+            </ul>
+        </nav>
+        <div class="hero-content">
+            <h1 id="animated-headline">Arte, Ciência e Beleza.</h1>
+            <p class="subtitle">Onde a sua beleza natural encontra a inovação.</p>
+            <a href="#contact" class="cta-button">Iniciar minha jornada</a>
+        </div>
+        <a href="#about" class="scroll-down-indicator" aria-label="Rolar para baixo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5V19M12 19L19 12M12 19L5 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+    </header>
+
+    <main>
+        <section id="about">
+            <div class="about-content">
+                <div class="about-text slide-in-left">
+                    <h2 class="section-title">Bem-vinda à BellaVitta</h2>
+                    <p>Mais que uma clínica, somos um refúgio dedicado à sua autoestima. Combinamos um atendimento profundamente humano com as tecnologias mais avançadas do mercado para criar resultados que não apenas realçam, mas celebram a sua beleza única.</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <strong>+10</strong>
+                            <span>Anos de Experiência</span>
+                        </div>
+                        <div class="stat">
+                            <strong>+2000</strong>
+                            <span>Clientes Felizes</span>
+                        </div>
+                        <div class="stat">
+                            <strong>99%</strong>
+                            <span>Índice de Satisfação</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image slide-in-right">
+                    <img src="/img/ambiente.png" alt="Ambiente sofisticado da Clínica BellaVitta">
+                </div>
+            </div>
+        </section>
+
+        <section id="treatments" class="bg-light">
+            <h2 class="section-title fade-in">Nossos Tratamentos Exclusivos</h2>
+            <p class="section-subtitle fade-in">Passe o mouse ou toque nos cards para descobrir mais.</p>
+            <div class="treatments-grid">
+                <div class="flip-card fade-in">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('img/facial.png')">
+                            <h3>Harmonização Facial</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <h4>Harmonização Facial</h4>
+                            <p>Técnicas avançadas para equilibrar e realçar os traços do seu rosto, com resultados naturais e elegantes.</p>
+                            <a href="#contact" class="card-button">Quero saber mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card fade-in">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('img/adicionamento.png')">
+                            <h3>Laser Lavieen</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <h4>Laser Lavieen</h4>
+                            <p>O "efeito BB Cream" que trata manchas, poros e melhora a textura da pele, revelando um brilho incomparável.</p>
+                            <a href="#contact" class="card-button">Quero saber mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card fade-in">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('img/bio.png')">
+                            <h3>Bioestimuladores de Colágeno</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <h4>Bioestimuladores</h4>
+                            <p>Combata a flacidez e recupere a firmeza da pele com ativos que estimulam a produção natural de colágeno.</p>
+                            <a href="#contact" class="card-button">Quero saber mais</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials">
+            <h2 class="section-title fade-in">A Confiança de Nossas Clientes</h2>
+            <div class="testimonial-slider-wrapper fade-in">
+                <div class="testimonial-slider">
+                    </div>
+                <button class="slider-btn prev">&lt;</button>
+                <button class="slider-btn next">&gt;</button>
+            </div>
+        </section>
+
+        <section id="contact" class="bg-gradient">
+            <div class="contact-container fade-in">
+                <h2 class="section-title">Dê o primeiro passo.</h2>
+                <p>Sua avaliação é o início de uma nova relação com o espelho. Preencha abaixo e nossa equipe entrará em contato via WhatsApp.</p>
+                <form id="contact-form" onsubmit="handleFormSubmit(event)">
+                    <div class="input-group">
+                        <input type="text" id="name" name="name" required>
+                        <label for="name">Nome Completo</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="tel" id="whatsapp" name="whatsapp" required pattern="[0-9]{10,11}">
+                        <label for="whatsapp">WhatsApp (com DDD)</label>
+                    </div>
+                    <button type="submit" class="cta-button">Agendar Minha Avaliação Gratuita</button>
+                    <p id="form-success-message" style="display: none;">Recebido! Em breve, uma de nossas especialistas entrará em contato com você. ✨</p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3 class="logo">BellaVitta</h3>
+                <p>Celebrando a beleza em todas as suas formas desde 2015.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="#about">A Clínica</a></li>
+                    <li><a href="#treatments">Tratamentos</a></li>
+                    <li><a href="#testimonials">Depoimentos</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contato</h4>
+                <p>Rua da Beleza, 123, Salvador, BA</p>
+                <p>whatsapp: (71) 99999-8888</p>
+                <p>contato@bellavitta.com.br</p>
+            </div>
+            <div class="footer-social">
+                <h4>Siga-nos</h4>
+                </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Clínica BellaVitta. Todos os direitos reservados. Feito com Amor.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+/* --- GERAL E VARIÁVEIS --- */
+:root {
+    --primary-color: #c58aae; /* Um rosa queimado, mais sofisticado */
+    --secondary-color: #3a3a3a;
+    --background-light: #fefbfb;
+    --text-dark: #2c2c2c;
+    --text-light: #fdfdfd;
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body: 'Poppins', sans-serif;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    background: #fff;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- CABEÇALHO E ANIMAÇÕES --- */
+header {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.6; /* Ajuste conforme o contraste necessário com o texto */
+}
+
+
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 25px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: all 0.4s ease;
+}
+
+#navbar.scrolled {
+    padding: 15px 5%;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo { font-family: var(--font-heading); font-size: 2.2em; font-weight: 700; color: inherit; }
+#navbar.scrolled .logo, #navbar.scrolled ul a { color: var(--text-dark); }
+nav ul { list-style: none; display: flex; gap: 35px; }
+nav a { color: var(--text-light); text-decoration: none; font-weight: 400; font-size: 1.1em; position: relative; }
+nav a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0; background-color: var(--primary-color); transition: width 0.3s; }
+nav a:hover::after { width: 100%; }
+.nav-button { border: 1px solid var(--text-light); padding: 8px 20px; border-radius: 50px; transition: all 0.3s; }
+#navbar.scrolled .nav-button { border-color: var(--primary-color); color: var(--primary-color); }
+.nav-button:hover { background: var(--primary-color); color: var(--text-light); border-color: var(--primary-color); }
+
+.hero-content h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(3em, 8vw, 6em);
+    font-weight: 700;
+    line-height: 1.1;
+}
+.hero-content .subtitle { font-size: clamp(1.1em, 2vw, 1.4em); font-weight: 300; margin: 20px 0 40px; letter-spacing: 1px; }
+
+#animated-headline span { display: inline-block; opacity: 0; transform: translateY(30px) rotate(10deg); transition: opacity 0.6s, transform 0.6s; transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+
+.cta-button {
+    background: var(--primary-color);
+    color: var(--text-light);
+    padding: 18px 40px;
+    font-size: 1.1em;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+.cta-button:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+
+.scroll-down-indicator { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); animation: bounce 2s infinite; }
+@keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); } 40% { transform: translate(-50%, -15px); } 60% { transform: translate(-50%, -5px); } }
+
+/* --- SEÇÕES GERAIS --- */
+main { overflow-x: hidden; }
+section { padding: 100px 5%; }
+.bg-light { background: var(--background-light); }
+.section-title { font-family: var(--font-heading); font-size: clamp(2.5em, 5vw, 3.5em); text-align: center; margin-bottom: 20px; }
+.section-subtitle { text-align: center; font-size: 1.1em; color: #777; max-width: 600px; margin: 0 auto 60px; }
+
+/* --- SEÇÃO "A CLÍNICA" --- */
+.about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.about-image img { width: 100%; height: 600px; object-fit: cover; border-radius: 10px; box-shadow: var(--shadow); }
+.stats { display: flex; gap: 40px; margin-top: 40px; }
+.stat strong { display: block; font-size: 2.5em; font-family: var(--font-heading); color: var(--primary-color); }
+.stat span { font-size: 0.9em; color: #777; }
+
+/* --- TRATAMENTOS (FLIP CARDS) --- */
+.treatments-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
+.flip-card { background-color: transparent; height: 450px; perspective: 1000px; }
+.flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.8s; transform-style: preserve-3d; border-radius: 15px; box-shadow: var(--shadow); }
+.flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+.flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; border-radius: 15px; }
+.flip-card-front { background-size: cover; background-position: center; color: white; display: flex; align-items: flex-end; justify-content: center; padding: 30px; }
+.flip-card-front h3 { font-family: var(--font-heading); font-size: 2em; text-shadow: 2px 2px 5px rgba(0,0,0,0.7); }
+.flip-card-back { background: var(--text-light); color: var(--text-dark); transform: rotateY(180deg); display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 30px; }
+.flip-card-back h4 { font-family: var(--font-heading); font-size: 1.8em; color: var(--primary-color); }
+.flip-card-back p { margin: 15px 0 25px; }
+.card-button { background: var(--primary-color); color: var(--text-light); padding: 10px 25px; border-radius: 50px; text-decoration: none; transition: all 0.3s; }
+
+/* --- DEPOIMENTOS (SLIDER) --- */
+.testimonial-slider-wrapper { position: relative; max-width: 800px; margin: auto; padding: 0 50px; }
+.testimonial-slider { display: flex; transition: transform 0.5s ease-in-out; }
+.testimonial-card { flex: 0 0 100%; text-align: center; padding: 20px; }
+.testimonial-card p { font-family: var(--font-heading); font-size: 1.8em; font-style: italic; color: #555; line-height: 1.4; margin-bottom: 20px; }
+.testimonial-card cite { font-family: var(--font-body); font-style: normal; font-weight: 600; color: var(--primary-color); }
+.slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: #fff; border: 1px solid #ddd; border-radius: 50%; width: 45px; height: 45px; cursor: pointer; z-index: 10; font-size: 1.5em; color: #555; transition: all 0.3s; }
+.slider-btn:hover { background: var(--primary-color); color: #fff; border-color: var(--primary-color); }
+.slider-btn.prev { left: 0; }
+.slider-btn.next { right: 0; }
+
+/* --- SEÇÃO DE CONTATO (FORMULÁRIO) --- */
+.bg-gradient { background: linear-gradient(135deg, var(--background-light), #fdecef); }
+.contact-container { max-width: 600px; margin: auto; text-align: center; }
+#contact-form { margin-top: 40px; }
+.input-group { position: relative; margin-bottom: 35px; }
+.input-group input { width: 100%; padding: 15px 10px; border: none; border-bottom: 2px solid #ccc; background: transparent; font-size: 1.1em; font-family: var(--font-body); }
+.input-group label { position: absolute; top: 15px; left: 10px; color: #999; transition: all 0.3s; pointer-events: none; }
+.input-group input:focus { outline: none; border-bottom-color: var(--primary-color); }
+.input-group input:focus + label, .input-group input:valid + label { top: -15px; left: 0; font-size: 0.9em; color: var(--primary-color); }
+
+/* --- RODAPÉ --- */
+footer { background: var(--secondary-color); color: #ccc; padding: 60px 5% 20px; }
+.footer-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
+.footer-container h4 { font-family: var(--font-heading); color: var(--text-light); font-size: 1.5em; margin-bottom: 15px; }
+footer ul { list-style: none; }
+footer a { color: #ccc; text-decoration: none; transition: color 0.3s; }
+footer a:hover { color: var(--primary-color); }
+.footer-bottom { border-top: 1px solid #4a4a4a; text-align: center; padding-top: 20px; font-size: 0.9em; }
+
+/* --- ANIMAÇÕES DE SCROLL --- */
+.fade-in { opacity: 0; transition: opacity 1s ease-in-out; }
+.slide-in-left { opacity: 0; transform: translateX(-50px); transition: opacity 0.8s, transform 0.8s; transition-timing-function: ease-out; }
+.slide-in-right { opacity: 0; transform: translateX(50px); transition: opacity 0.8s, transform 0.8s; transition-timing-function: ease-out; }
+.fade-in.visible, .slide-in-left.visible, .slide-in-right.visible { opacity: 1; transform: translateX(0); }
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+    nav ul { display: none; } /* Ideal seria menu hamburguer */
+    .about-content { grid-template-columns: 1fr; }
+    .about-image { grid-row: 1; }
+}
