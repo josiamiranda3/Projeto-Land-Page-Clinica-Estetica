@@ -157,6 +157,24 @@ footer a { color: #ccc; text-decoration: none; transition: color 0.3s; }
 footer a:hover { color: var(--primary-color); }
 .footer-bottom { border-top: 1px solid #4a4a4a; text-align: center; padding-top: 20px; font-size: 0.9em; }
 
+.footer-social p {
+    margin-bottom: 0.5rem;
+}
+.footer-social a {
+    margin-right: 1rem;
+    display: inline-block; /* Para aplicar margem */
+}
+.footer-social img {
+    width: 28px;
+    height: 28px;
+    filter: invert(0.8); /* Para ícones claros em fundo escuro */
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+.footer-social a:hover img {
+    filter: invert(1) drop-shadow(0 0 3px var(--cor-primaria));
+    transform: scale(1.1);
+}
+
 /* --- ANIMAÇÕES DE SCROLL --- */
 .fade-in { opacity: 0; transition: opacity 1s ease-in-out; }
 .slide-in-left { opacity: 0; transform: translateX(-50px); transition: opacity 0.8s, transform 0.8s; transition-timing-function: ease-out; }
