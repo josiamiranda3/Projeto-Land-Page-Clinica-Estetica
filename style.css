@@ -157,6 +157,11 @@ footer a { color: #ccc; text-decoration: none; transition: color 0.3s; }
 footer a:hover { color: var(--primary-color); }
 .footer-bottom { border-top: 1px solid #4a4a4a; text-align: center; padding-top: 20px; font-size: 0.9em; }
 
+.footer-social {
+    flex: 1;
+    min-width: 250px;
+}
+
 .footer-social p {
     margin-bottom: 0.5rem;
 }
